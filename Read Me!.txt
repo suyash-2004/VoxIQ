@@ -1,0 +1,13 @@
+1) install the following python modules:-
+speech_recognition -> pip install SpeechRecognition
+wikipedia -> pip install wikipedia
+pyttsx3 -> pip install pyttsx3
+ pywhatkit -> pip install pywhatkit
+tqdm -> pip install tqdm
+os -> no need to install, its probably already intalled on your pc
+random -> no need to install, its probably already intalled on your pc
+datetime -> no need to install, its probably already intalled on your pc
+time -> no need to install, its probably already intalled on your pc
+smtplib -> no need to install, its probably already intalled on your pc
+webbrowser -> no need to install, its probably already intalled on your pc
+2) add your songs to the songs folder 
