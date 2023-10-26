@@ -5,10 +5,9 @@ Follow these steps to clone the VoxIQ repository, navigate to the project direct
 1. **Clone the VoxIQ Repository**: Open a terminal or command prompt and run the following command to clone the VoxIQ repository from GitHub. This will download the project files to your computer.
 
     ```bash
-    git clone https://github.com/your-username/voxiq.git
+    git clone https://github.com/suyash-2004/VoxIQ.git
     ```
 
-    Replace `https://github.com/your-username/voxiq.git` with the actual URL of your VoxIQ repository on GitHub.
 
 2. **Navigate to the Project Directory**: Use the `cd` command to navigate to the directory where you have the VoxIQ project files. For example:
 
