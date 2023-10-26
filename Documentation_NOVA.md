@@ -94,7 +94,7 @@ The assistant can play music from a predefined directory. Users can ask NOVA to 
 NOVA can assist users with navigation by providing directions to a specified destination. It opens Google Maps with the destination pre-filled for easy access.
 
 <img width="361" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/79edc848-9e9c-4a44-a7a9-bb6ae7ed80fd" align="center">
-
+<br>
 <img width="596" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/eeb2649c-9258-405f-ba38-e1e2931a27a5" align="center">
 
 
