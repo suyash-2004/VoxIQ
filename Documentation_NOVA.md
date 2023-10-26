@@ -38,6 +38,7 @@ NOVA boasts a variety of features that make it a versatile virtual assistant:
 ### 2.1 Speech Recognition
 
 NOVA utilizes the SpeechRecognition library to recognize and interpret user voice commands. Users can communicate with NOVA by speaking naturally, and the assistant processes these commands to perform the requested actions.
+<img width="886" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/3492436d-67db-4002-b71c-9ecc6afc12d5">
 
 ### 2.2 Voice Synthesis
 
