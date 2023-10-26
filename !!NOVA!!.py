@@ -9,7 +9,8 @@ import webbrowser as wb
 import pywhatkit as pykt
 from tqdm import tqdm
 
-engine = pyttsx3.init("sapi5") #Microsoft Speech API (SAPI5) is the technology for voice recognition and synthesis provided by Microsoft. 
+engine = pyttsx3.init("sapi5") #Microsoft Speech API (SAPI5) is the technology for voice recognition and
+                               # synthesis provided by Microsoft.
 
 voice = engine.getProperty('voices') # Gets the current value of a property.
 engine.setProperty("voice", voice[1].id) # Adds a property value to set to the event queue.
@@ -37,14 +38,14 @@ def pbar():
 def wish():
     time = int(datetime.now().hour)
     if time >=0 and time <=12 :
-        print("->Hey! Good Morning,I'm NOVA, How May I Help You")
-        speak("Hey! Good Morning!,I'm NOVA, How May I Help You")
+        print("->Hey! Good Morning,I'm VoxIQ, How May I Help You")
+        speak("Hey! Good Morning!,I'm VoxIQ, How May I Help You")
     elif time >12 and time<=18:
-        print("->Hey! Good Afternoon!,I'm NOVA, How May I Help You")
-        speak("hey! Good Afternoon!,I'm NOVA, how may i help you")
+        print("->Hey! Good Afternoon!,I'm VoxIQ, How May I Help You")
+        speak("hey! Good Afternoon!,I'm VoxIQ, how may i help you")
     elif time >18 and time <24:
-        print("->Hey! Good Evening!,I'm NOVA, How May I Help You")
-        speak("hey! Good Evening!,I'm NOVA, How May I Help You")
+        print("->Hey! Good Evening!,I'm VoxIQ, How May I Help You")
+        speak("hey! Good Evening!,I'm VoxIQ, How May I Help You")
 
 
 def command_inpt():
@@ -55,9 +56,9 @@ def command_inpt():
             audio = rec.listen(source)
         try :
             global query
-            query = rec.recognize_google(audio,language="en-IN")
+            query = rec.recognize_google(audio, language="en-IN")
             print("\t\t\t\t"+query.title()+"<--\n")
-            
+
             return query
         except Exception:
             print("->Say That Again Please!")
@@ -69,7 +70,7 @@ def command_inpt():
 def gettym():
     curtym = datetime.now()
     tym_now = curtym.strftime("%H:%M")
-    
+
     ln = len(tym_now)
     tym = ""
     for i in range(ln):
@@ -89,7 +90,7 @@ def tym_to_wrds(h,m):
     if m == 0:
         print("It's "+tymdict[h]+" o'clock")
         speak("It's "+tymdict[h]+" o'clock")
-        
+
     elif m == 30:
         print("->It's half past "+tymdict[h])
         speak("It's half past "+tymdict[h])
@@ -143,11 +144,11 @@ def timer(duratn):
                 elif i == tym_sec:
                     print("Time Up!")
 
-    elif "seconds" in query:       
+    elif "seconds" in query:
         for i in range(duratn,0,-1):
             time.sleep(1)
             print(i)
-            if i == duratn // 2: 
+            if i == duratn // 2:
                 print("->Time Left : " + str(i) + " Seconds")
             elif i == 0:
                 print("->Time Up!")
@@ -164,12 +165,12 @@ def get_directions(query):
 
 
 def play_music():
-    path = r"C:\Users\suyas\Desktop\Everything\Files And Floders\CODING\NOVA\songs"  # change the path according to your pc
+    path = r"C:\Users\suyas\Desktop\Everything\Files And Floders\CODING\VoxIQ\songs"
     songlst = os.listdir(path)
     song = random.choice(songlst)
     speak("playing music")
     print("->Playing Now : " + song)
-    os.startfile("C:\\Users\\suyas\\Desktop\\Everything\\Files And Floders\\CODING\\NOVA\\songs\\" + song)  # change the path according to your pc
+    os.startfile("C:\\Users\\suyas\\Desktop\\Everything\\Files And Floders\\CODING\\VoxIQ\\songs\\" + song)  # change the path according to your pc
 
 
 def opentxt():
@@ -177,11 +178,11 @@ def opentxt():
     txtnm = txtnme.lstrip(" ")
     txt = txtnm.rstrip("text file")
     fle = txt + ".txt"
-    
-    path = "C:\\Users\\suyas\\Desktop\\Everything\\Files And Floders\\CODING\\NOVA\\" + txt + ".txt"
-    path_ = "C:\\Users\\suyas\\Desktop\\Everything\\Files And Floders\\CODING\\NOVA\\"
+
+    path = "C:\\Users\\suyas\\Desktop\\Everything\\Files And Floders\\CODING\\VoxIQ\\" + txt + ".txt"
+    path_ = "C:\\Users\\suyas\\Desktop\\Everything\\Files And Floders\\CODING\\VoxIQ\\"
     files = os.listdir(path_)
-    
+
     if fle in files:
         with open(path,"r") as file:
             red = file.readlines()
@@ -189,19 +190,19 @@ def opentxt():
             speak(fle + " Reads :-")
             for i in red:
                 print(i)
-                speak(i) 
+                speak(i)
     else:
         print(fle + " Dosen't Exists")
         speak(fle + " Dosen't Exists")
 
 
-print("\t\tWELCOME! This is NOVA, Neuro Optimised Virtual Assistant.\n\t\t\t\t\t A Virtual Desktop Assistant")
+print("\t\tWELCOME! This is VoxIQ, Neuro Optimised Virtual Assistant.\n\t\t\t\t\t A Virtual Desktop Assistant")
 time.sleep(1)
 ch = input("Press Enter To Start : ")
 
 print("Starting........")
 time.sleep(0.7)
-print("Getting NOVA ready.....")
+print("Getting VoxIQ ready.....")
 time.sleep(2)
 pbar()
 wish()
@@ -222,7 +223,7 @@ while True:
         print("->Bye! Have A Good Day")
         speak("Bye! Have A Good Day")
         break
-    
+
     elif "hi" in query or "hello" in query:
         hi_output = ["Hi!", "Hey There!", "Hello", "Hi there! How are you?"]
         choice = random.choices(hi_output)
