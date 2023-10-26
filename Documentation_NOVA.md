@@ -50,44 +50,56 @@ The assistant employs the pyttsx3 library for voice synthesis. It can respond to
 ### 2.3 Greeting and Time-Based Interaction
 
 NOVA greets the user based on the time of day, offering a personalized experience with messages such as "Good Morning" or "Good Evening." It makes the interaction with the virtual assistant more engaging.
+
 <img width="482" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/0f31e9f0-dd4d-4320-a573-b63b07cc56d2" align="center">
 
 ### 2.4 Command Input
 
 Users can initiate interactions with NOVA by simply speaking. The assistant listens for voice commands and responds accordingly.
+
 <img width="447" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/134b84f3-285b-4121-a4c9-c20aab54e7f6"  align="center">
 
 ### 2.5 Wikipedia Search
 
 NOVA can perform Wikipedia searches to provide users with information on various topics. It fetches summarized content from Wikipedia and reads it aloud to the user.
+
 <img width="509" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/eedda3fd-b776-4894-ab9d-3be605eb5aa9" align="center">
 
 ### 2.6 File and Text File Handling
 
 Users can instruct NOVA to open text files. The assistant can locate and read the contents of specified text files.
+
 <img width="667" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/b7dc244d-dcbe-462c-9e79-5b06bb0f70fd" align="center">
 
 ### 2.7 Web Search
 
 NOVA is capable of performing web searches using the pywhatkit library. Users can ask NOVA to search for information on a specific topic, and it will open a web browser to display the search results.
+
 <img width="485" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/fdbc6b60-e440-4b2d-88aa-b731ff755770" align="center">
+
 ### 2.8 Timer
 
 NOVA can set timers for specified durations, whether in seconds, minutes, or hours. It provides alerts and notifies users when the set time is up.
+
 <img width="347" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/e7fdc17a-2d06-4254-943b-eb6b62692767" align="center">
+
 <img width="459" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/2310d001-1c23-45c3-9cd4-fcd3fa39bbec" align="center">
+
 <img width="437" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/93bd8745-1f97-46b7-9f46-e8ac8f5c3e5a" align="center">
 
 
 ### 2.9 Music Player
 
 The assistant can play music from a predefined directory. Users can ask NOVA to start playing music, and it selects a random song to play.
+
 <img width="698" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/e1827734-48c6-4143-8726-c35106cc5aee" align="center">
 
 ### 2.10 Navigation
 
 NOVA can assist users with navigation by providing directions to a specified destination. It opens Google Maps with the destination pre-filled for easy access.
+
 <img width="361" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/79edc848-9e9c-4a44-a7a9-bb6ae7ed80fd" align="center">
+
 <img width="596" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/eeb2649c-9258-405f-ba38-e1e2931a27a5" align="center">
 
 
