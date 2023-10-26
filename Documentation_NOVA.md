@@ -44,7 +44,8 @@ NOVA utilizes the SpeechRecognition library to recognize and interpret user voic
 ### 2.2 Voice Synthesis
 
 The assistant employs the pyttsx3 library for voice synthesis. It can respond to user queries by speaking out the results or providing information.
-<img width="554" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/8639897e-7016-4652-ac8f-23d41dee5d97">
+
+<align = "center "img width="554" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/8639897e-7016-4652-ac8f-23d41dee5d97">
 
 ### 2.3 Greeting and Time-Based Interaction
 
