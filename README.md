@@ -122,3 +122,11 @@ VoxIQ performs well for various tasks, including voice recognition and synthesis
 VoxIQ, the Neuro Optimized Virtual Assistant, is a versatile Python-based desktop assistant designed to assist users in performing a wide range of tasks through voice commands. With features such as speech recognition, web searches, timer management, and more, VoxIQ aims to enhance the user's desktop experience by providing helpful and interactive assistance.
 
 Please note that this is a basic outline, and you can expand on each section with more details, instructions, and examples. Additionally, you may want to include information about installation and any future development plans for your virtual assistant.
+
+## Author
+
+- Suyash Singh
+
+## License
+
+This project is licensed under the [GNU General Public License (GPL)](LICENSE) - see the [LICENSE.txt](LICENSE) file for details.
