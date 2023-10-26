@@ -81,7 +81,7 @@ NOVA is capable of performing web searches using the pywhatkit library. Users ca
 
 NOVA can set timers for specified durations, whether in seconds, minutes, or hours. It provides alerts and notifies users when the set time is up.
 
-<img width="570" height="600" alt="Screenshot 2023-10-26 125244" src="https://github.com/suyash-2004/NOVA/assets/61971096/72d386db-ff14-4a7a-9f34-9e416c643eee" align="center">
+![Uploading Doc1_cropped_pages-to-jpg-0001.jpg…]()
 
 
 ### 2.9 Music Player
