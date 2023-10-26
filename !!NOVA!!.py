@@ -12,8 +12,7 @@ from tqdm import tqdm
 engine = pyttsx3.init("sapi5") #Microsoft Speech API (SAPI5) is the technology for voice recognition and synthesis provided by Microsoft. 
 
 voice = engine.getProperty('voices') # Gets the current value of a property.
-print(voice)
-engine.setProperty("voice",voice[1].id) # Adds a property value to set to the event queue.
+engine.setProperty("voice", voice[1].id) # Adds a property value to set to the event queue.
 
 rate = engine.getProperty("rate") # Gets the current value of a property.
 engine.setProperty("rate", 140) # Adds a property value to set to the event queue.
@@ -156,6 +155,13 @@ def timer(duratn):
             else:
                 continue
 
+def get_directions(query):
+    destination = query  # You can update this variable based on user input
+    destination = destination.replace(" ", "+")  # Replace spaces with plus signs for URL
+    url = f"https://www.google.com/maps/dir/?api=1&destination={destination}"
+    wb.open(url, new=2)
+    speak(f"Opening Google Maps")
+
 
 def play_music():
     path = r"C:\Users\suyas\Desktop\Everything\Files And Floders\CODING\NOVA\songs"  # change the path according to your pc
@@ -212,12 +218,12 @@ while True:
         query = query.lower()
         print("\t\t\t\t" + query.title() + "<--\n")
 
-
-    if "q" in query:
+    if "quit" in query:
         print("->Bye! Have A Good Day")
         speak("Bye! Have A Good Day")
         break
-    if "hi" in query or "hello" in query:
+    
+    elif "hi" in query or "hello" in query:
         hi_output = ["Hi!", "Hey There!", "Hello", "Hi there! How are you?"]
         choice = random.choices(hi_output)
         speak(choice)
@@ -376,6 +382,10 @@ while True:
         speak("Bye!, Have A Good Day")
         break
 
+    if "navigate to" in query:
+         query = query.replace("navigate to","")
+         get_directions(query)
+
     elif "play music" in query or "play songs" in query or "play song":
         is_playing_music = True
         play_music()
@@ -388,5 +398,3 @@ while True:
         speak("Searching For " + query)
         pykt.search(query)
 
-
-          
