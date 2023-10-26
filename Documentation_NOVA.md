@@ -55,7 +55,7 @@ NOVA greets the user based on the time of day, offering a personalized experienc
 ### 2.4 Command Input
 
 Users can initiate interactions with NOVA by simply speaking. The assistant listens for voice commands and responds accordingly.
-<img width="447" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/134b84f3-285b-4121-a4c9-c20aab54e7f6">
+<img width="447" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/134b84f3-285b-4121-a4c9-c20aab54e7f6" align="center">
 
 ### 2.5 Wikipedia Search
 
