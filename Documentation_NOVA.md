@@ -38,7 +38,7 @@ NOVA boasts a variety of features that make it a versatile virtual assistant:
 ### 2.1 Speech Recognition
 
 NOVA utilizes the SpeechRecognition library to recognize and interpret user voice commands. Users can communicate with NOVA by speaking naturally, and the assistant processes these commands to perform the requested actions.
-<img width="694" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/4b682349-9e86-4c5f-9386-f32ee4e18d12">
+![Speech Recognition]((https://github.com/suyash-2004/NOVA/assets/61971096/fdbc6b60-e440-4b2d-88aa-b731ff755770))
 
 ### 2.2 Voice Synthesis
 
@@ -69,7 +69,7 @@ Users can instruct NOVA to open text files. The assistant can locate and read th
 
 NOVA is capable of performing web searches using the pywhatkit library. Users can ask NOVA to search for information on a specific topic, and it will open a web browser to display the search results.
 <img width="485" alt="image" src="https://github.com/suyash-2004/NOVA/assets/61971096/fdbc6b60-e440-4b2d-88aa-b731ff755770">
-
+![Speech Recognition]((https://github.com/suyash-2004/NOVA/assets/61971096/fdbc6b60-e440-4b2d-88aa-b731ff755770))
 ### 2.8 Timer
 
 NOVA can set timers for specified durations, whether in seconds, minutes, or hours. It provides alerts and notifies users when the set time is up.
