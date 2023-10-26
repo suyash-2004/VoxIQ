@@ -31,4 +31,3 @@ Follow these steps to clone the VoxIQ repository, navigate to the project direct
 
 Now, your system is set up with all the necessary dependencies, and you have the VoxIQ project files ready to use. You can proceed to use the virtual assistant as described in the project's documentation.
 
-Make sure to replace `https://github.com/your-username/voxiq.git` with the actual URL of your VoxIQ repository on GitHub.
