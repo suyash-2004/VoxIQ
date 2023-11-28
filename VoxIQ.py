@@ -9,7 +9,8 @@ import webbrowser as wb
 import pywhatkit as pykt
 from tqdm import tqdm
 
-engine = pyttsx3.init("sapi5") #Microsoft Speech API (SAPI5) is the technology for voice recognition and
+
+engine = pyttsx3.init("sapi5") # Microsoft Speech API (SAPI5) is the technology for voice recognition and
                                # synthesis provided by Microsoft.
 
 voice = engine.getProperty('voices') # Gets the current value of a property.
@@ -48,23 +49,28 @@ def wish():
         speak("hey! Good Evening!,I'm VoxIQ, How May I Help You")
 
 
-def command_inpt():
-    def input2():
-        with sr.Microphone() as source :
-            print("listening.....")
-            rec.pause_threshold = 1
-            audio = rec.listen(source)
-        try :
-            global query
-            query = rec.recognize_google(audio, language="en-IN")
-            print("\t\t\t\t"+query.title()+"<--\n")
-
+def command_input():
+    with sr.Microphone() as source:
+        print("listening.....")
+        rec.pause_threshold = 3
+        audio = rec.listen(source, timeout=5, phrase_time_limit=5)
+    try:
+        query = rec.recognize_google(audio, language="en-IN").lower()
+        if not query.strip():  # Check if the recognized query is empty after stripping whitespace
+            print("->Say that again please")
+            speak("Say that again please")
+            return command_input()  # Ask the user to repeat themselves
+        else:
+            print("\t\t\t\t" + query.title() + "<--\n")
             return query
-        except Exception:
-            print("->Say That Again Please!")
-            speak("say that again please!")
-            return input2()
-    return input2()
+    except sr.UnknownValueError:
+        print("->Say that again please")
+        speak("Say that again please")
+        return command_input()  # Ask the user to repeat themselves
+    except sr.RequestError as e:
+        print(f"Could not request results from Google Speech Recognition service; {e}")
+        speak("There was an error with the speech recognition service. Please try again later.")
+        return None
 
 
 def gettym():
@@ -161,7 +167,6 @@ def get_directions(query):
     destination = destination.replace(" ", "+")  # Replace spaces with plus signs for URL
     url = f"https://www.google.com/maps/dir/?api=1&destination={destination}"
     wb.open(url, new=2)
-    speak(f"Opening Google Maps")
 
 
 def play_music():
@@ -195,8 +200,84 @@ def opentxt():
         print(fle + " Dosen't Exists")
         speak(fle + " Dosen't Exists")
 
+def joinclass():
+    link_zoom_eng="https://zoom.us/j/96655371661?pwd=UTR5Vk5YR09OSTZHUlVsZlp1bFE3dz09"
+    link_zoom_maths="https://zoom.us/j/96655371661?pwd=UTR5Vk5YR09OSTZHUlVsZlp1bFE3dz09"
+    link_zoom_chem="https://zoom.us/j/96655371661?pwd=UTR5Vk5YR09OSTZHUlVsZlp1bFE3dz09" 
+    link_zoom_phy="https://zoom.us/j/96655371661?pwd=UTR5Vk5YR09OSTZHUlVsZlp1bFE3dz09"
+    link_zoom_cs="https://zoom.us/j/96655371661?pwd=UTR5Vk5YR09OSTZHUlVsZlp1bFE3dz09"
+    link_meet_cs="https://meet.google.com/fns-vnqj-hch?authuser=2&hs=179"
+    link_meet_phy="https://meet.google.com/fns-vnqj-hch?authuser=2&hs=179"
+    link_meet_chem="https://meet.google.com/fns-vnqj-hch?authuser=2&hs=179"
+    link_meet_maths="https://meet.google.com/fns-vnqj-hch?authuser=2&hs=179"
+    link_meet_eng="https://meet.google.com/fns-vnqj-hch?authuser=2&hs=179"
+    
+    if "english" in query:
+        if "zoom" in query:
+            lnk = link_zoom_eng 
+            speak("Opening Zoom!")
+            print("Opening Zoom!")
+            wb.open(lnk, new=2)
 
-print("\t\tWELCOME! This is VoxIQ, Neuro Optimised Virtual Assistant.\n\t\t\t\t\t A Virtual Desktop Assistant")
+        elif "google meet" in query or "meet" in query:
+            lnk = link_meet_eng
+            speak("Opening Google Meet!")
+            print("Opening Google Meet!")
+            wb.open(lnk, new=2)
+
+    elif "maths" in query:
+        if "zoom" in query:
+            lnk = link_zoom_maths  
+            speak("Opening Zoom!")
+            print("Opening Zoom!")
+            wb.open(lnk, new=2)
+
+        elif "google meet" in query or "meet" in query:
+            lnk = link_meet_maths 
+            speak("Opening Google Meet!")
+            print("Opening Google Meet!")
+            wb.open(lnk, new=2)
+
+    elif "chemistry" in query:
+        if "zoom" in query:
+            lnk = link_zoom_chem  
+            speak("Opening Zoom!")
+            print("Opening Zoom!")
+            wb.open(lnk, new=2)
+
+        elif "google meet" in query or "meet" in query:
+            lnk = link_meet_chem 
+            speak("Opening Google Meet!")
+            print("Opening Google Meet!")
+            wb.open(lnk, new=2)
+
+    elif "physics" in query:
+        if "zoom" in query:
+            lnk = link_zoom_phy 
+            speak("Opening Zoom!")
+            print("Opening Zoom!")
+            wb.open(lnk, new=2)
+
+        elif "google meet" in query or "meet" in query:
+            lnk =  link_meet_phy 
+            speak("Opening Google Meet!")
+            print("Opening Google Meet!")
+            wb.open(lnk, new=2)
+
+    elif "cs" in query or "computer science" in query:
+        if "zoom" in query:
+            lnk =  link_zoom_cs
+            speak("Opening Zoom!")
+            print("Opening Zoom!")
+            wb.open(lnk, new=2)
+
+        elif "google meet" in query or "meet" in query:
+            lnk =  link_meet_cs
+            speak("Opening Google Meet!")
+            print("Opening Google Meet!")
+            wb.open(lnk, new=2)
+
+print("\t\t\t\t\t\tWELCOME! This is VoxIQ.\n\t\t\t\t\t Your Virtual Desktop Assistant")
 time.sleep(1)
 ch = input("Press Enter To Start : ")
 
@@ -207,29 +288,29 @@ time.sleep(2)
 pbar()
 wish()
 
-is_playing_music = False
+flag = False
 
 while True:
-    if not is_playing_music:
-        with sr.Microphone() as source:
-            print("Listening.....")
-            rec.adjust_for_ambient_noise(source, duration=0.5)
-            audio = rec.listen(source)
-        query = rec.recognize_google(audio, language="en-IN")
-        query = query.lower()
-        print("\t\t\t\t" + query.title() + "<--\n")
+    if not flag:    
+        query = command_input()
 
-    if "quit" in query:
-        print("->Bye! Have A Good Day")
-        speak("Bye! Have A Good Day")
-        break
+    if "navigate to" in query:
+        flag = True
+        print("->Opening Google Maps")
+        speak("Opening Google Maps")
+        destination = query.replace("navigate to", "").strip()
+        get_directions(destination)
+        input("Press Enter to continue after you close the Browser Window...")
+        flag = False
+        continue
 
     elif "hi" in query or "hello" in query:
         hi_output = ["Hi!", "Hey There!", "Hello", "Hi there! How are you?"]
-        choice = random.choices(hi_output)
+        choice = random.choice(hi_output)
+        print("->",choice)
         speak(choice)
         if choice == "Hi there! How are you?":
-            answr = command_inpt()
+            answr = command_input()
             positive_reply = ["i am good", "i am fine", "i am great", "good", "fine", "great"]
             if answr in positive_reply:
                 print("->Good To Hear That")
@@ -238,24 +319,32 @@ while True:
             else:
                 print("->Sorry To Hear That!")
                 speak("Sorry To Hear That!")
+        continue
 
     elif 'wikipedia' in query:
         print("->Searching Wikipedia.....")
         speak('Searching Wikipedia')
         query = query.replace("wikipedia", "")
-        results = wikipedia.summary(query, sentences=3, auto_suggest=True)
+        results = wikipedia.summary(query, sentences=2, auto_suggest=True)
         speak("->According to Wikipedia")
         print(results)
         speak(results)
+        continue
 
     elif "text file" in query:
         opentxt()
+        continue
 
     elif "open" in query:
-        subject = query.strip("Open")
+        flag = True
+        subject = query.strip("open")
         pykt.search(subject)
+        input("Press Enter to continue after you close the Browser Window...")
+        flag = False
+        continue
 
     elif "youtube" in query:
+        flag = True
         print("->Searching Youtube!")
         speak("searching youtube")
         subjectlst = query.split(" ")
@@ -273,6 +362,9 @@ while True:
 
         link = "https://www.youtube.com/results?search_query=" + subject
         wb.open(link, new=2, autoraise=True)
+        input("Press Enter to continue after you close the Browser Window...")
+        flag = False
+        continue
 
     elif "timer" in query:
         subjectlst = query.split(" ")
@@ -303,58 +395,22 @@ while True:
                 print("->Setting Timer For " + str(digit) + " Minutes")
                 speak("Setting Timer For " + str(digit) + " Minutes")
         timer(digit)
+        continue
 
     elif "time" in query:
         gettym()
         tym_to_wrds(int(h), int(m))
+        continue
 
     elif "class" in query:
-        if "english" in query:
-            if "zoom" in query:
-                lnk = "https://zoom.us/j/96655371661?pwd=UTR5Vk5YR09OSTZHUlVsZlp1bFE3dz09"  # replace link with the actual english class zoom link
-                wb.open(lnk, new=2)
-
-            elif "google meet" in query or "meet" in query:
-                lnk = "https://meet.google.com/fns-vnqj-hch?authuser=2&hs=179"  # replace link with the actual english class meet link
-                wb.open(lnk, new=2)
-
-        elif "maths" in query:
-            if "zoom" in query:
-                lnk = "https://zoom.us/j/96655371661?pwd=UTR5Vk5YR09OSTZHUlVsZlp1bFE3dz09"  # replace link with the actual maths class zoom link
-                wb.open(lnk, new=2)
-
-            elif "google meet" in query or "meet" in query:
-                lnk = "https://meet.google.com/fns-vnqj-hch?authuser=2&hs=179"  # replace link with the actual maths class meet link
-                wb.open(lnk, new=2)
-
-        elif "chemistry" in query:
-            if "zoom" in query:
-                lnk = "https://zoom.us/j/96655371661?pwd=UTR5Vk5YR09OSTZHUlVsZlp1bFE3dz09"  # replace link with the actual chemistry class zoom link
-                wb.open(lnk, new=2)
-
-            elif "google meet" in query or "meet" in query:
-                lnk = "https://meet.google.com/fns-vnqj-hch?authuser=2&hs=179"  # replace link with the actual chemistry class meet link
-                wb.open(lnk, new=2)
-
-        elif "physics" in query:
-            if "zoom" in query:
-                lnk = "https://zoom.us/j/96655371661?pwd=UTR5Vk5YR09OSTZHUlVsZlp1bFE3dz09"  # replace link with the actual physics class zoom link
-                wb.open(lnk, new=2)
-
-            elif "google meet" in query or "meet" in query:
-                lnk = "https://meet.google.com/fns-vnqj-hch?authuser=2&hs=179"  # replace link with the actual physics class meet link
-                wb.open(lnk, new=2)
-
-        elif "cs" in query or "computer science" in query:
-            if "zoom" in query:
-                lnk = "https://zoom.us/j/96655371661?pwd=UTR5Vk5YR09OSTZHUlVsZlp1bFE3dz09"  # replace link with the actual computer science class zoom link
-                wb.open(lnk, new=2)
-
-            elif "google meet" in query or "meet" in query:
-                lnk = "https://meet.google.com/fns-vnqj-hch?authuser=2&hs=179"  # replace link with the actual computer science class meet link
-                wb.open(lnk, new=2)
+        flag = True
+        joinclass()
+        input("Press Enter to continue after you close the Browser Window...")
+        flag = False
+        continue
 
     elif "what" in query or "how" in query or "tell me about" in query:
+        flag = True
         if "tell me about" in query:
             subjectlst = query.split(" ")
             print(subjectlst)
@@ -377,25 +433,27 @@ while True:
             speak("searching for " + query + " ......")
             time.sleep(1)
             pykt.search(query)
+        input("Press Enter to continue after you close the Browser Window...")
+        flag = False
+        continue
 
     elif "bye" in query or "exit" in query or "quit" in query:
         print("->Bye!, Have A Good Day")
         speak("Bye!, Have A Good Day")
         break
 
-    if "navigate to" in query:
-         query = query.replace("navigate to","")
-         get_directions(query)
-
     elif "play music" in query or "play songs" in query or "play song":
-        is_playing_music = True
+        flag = True
         play_music()
         input("Press Enter to continue after you close the music player...")
-        is_playing_music = False
+        flag = False
         continue
 
     else:
+        flag = True
         print("Searching For " + query)
         speak("Searching For " + query)
         pykt.search(query)
-
+        input("Press Enter to continue after you close the Browser Window...")
+        flag = False
+        
