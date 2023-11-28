@@ -1,8 +1,6 @@
 # VoxIQ - Your Virtual Desktop Assistant
 
-<div align="center"> 
-  <img src="https://i.gifer.com/9Ybh.gif">
-</div>
+![VoxIQ GIF](https://i.gifer.com/9Ybh.gif)
 
 VoxIQ is an innovative virtual desktop assistant developed as part of a Python internship at Devtern. This voice-activated assistant is designed to enhance your computing experience by seamlessly integrating voice commands for various tasks.
 
@@ -36,7 +34,7 @@ VoxIQ is an innovative virtual desktop assistant developed as part of a Python i
 ### Prerequisites
 
 - Python 3.x
-- Required Python libraries (listed in requirements.txt)
+- Required Python libraries (listed in [requirements.txt](requirements.txt))
 
 ### Installation
 
@@ -44,6 +42,7 @@ VoxIQ is an innovative virtual desktop assistant developed as part of a Python i
 
    ```bash
    git clone https://github.com/suyash-2004/VoxIQ.git
+
 Install the required dependencies:
 
 bash
