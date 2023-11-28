@@ -1,6 +1,6 @@
 # VoxIQ - Your Virtual Desktop Assistant
 
-![VoxIQ Logo](link_to_logo_image)
+<div style="padding-top:75.000%;position:relative;"><iframe src="https://gifer.com/embed/9Ybh" width="100%" height="100%" style='position:absolute;top:0;left:0;' frameBorder="0" allowFullScreen></iframe></div><p><a href="https://gifer.com">via GIFER</a></p>
 
 VoxIQ is an innovative virtual desktop assistant developed as part of a Python internship at Devtern. This voice-activated assistant is designed to enhance your computing experience by seamlessly integrating voice commands for various tasks.
 
